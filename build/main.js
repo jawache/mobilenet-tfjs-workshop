@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -6,13 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import p5 from '../node_modules/p5/lib/p5';
-import * as mobilenet from '@tensorflow-models/mobilenet';
-let run = (p) => {
+var config = (p) => {
     let video = document.getElementById("video");
     let canvas = document.getElementById("canvas");
     let pre = document.getElementById("predictions");
-    let model;
+    let model = null;
     let startCamera = () => __awaiter(this, void 0, void 0, function* () {
         let stream = yield navigator.mediaDevices.getUserMedia({ video: true });
         video.srcObject = stream;
@@ -30,24 +29,18 @@ let run = (p) => {
     };
     let displayPredictions = (predictions) => {
         let val = "";
-        for (let prediction of predictions) {
-            let perc = (prediction.probability * 100).toFixed(2);
-            val += `${perc}% | ${prediction.className}\n`;
-            console.log(val);
-        }
         pre.innerHTML = val;
     };
     let classifyImage = () => __awaiter(this, void 0, void 0, function* () {
-        let predictions = yield model.classify(canvas);
+        let predictions = [];
         displayPredictions(predictions);
     });
     let main = () => __awaiter(this, void 0, void 0, function* () {
-        model = yield mobilenet.load();
         yield startCamera();
     });
     p.setup = () => {
         main();
     };
 };
-let sketch = new p5(run);
+var sketch = new p5(config);
 //# sourceMappingURL=main.js.map

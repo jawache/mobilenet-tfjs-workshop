@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-let config = (p) => {
+var config = (p) => {
     let video = document.getElementById("video");
     let canvas = document.getElementById("canvas");
     let pre = document.getElementById("predictions");
@@ -48,5 +48,5 @@ let config = (p) => {
         main();
     };
 };
-let sketch = new p5(config);
+var sketch = new p5(config);
 //# sourceMappingURL=main.completed.js.map
