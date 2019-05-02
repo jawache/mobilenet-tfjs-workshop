@@ -2,15 +2,17 @@
   <head>
     <title>Mobilenet</title>
     <meta charset="UTF-8" />
-    <!-- Load TensorFlow.js. This is required to use MobileNet. -->
+    <link rel="shortcut icon" href="https://p5js.org/assets/img/favicon.ico">
+    <link rel="icon" href="https://p5js.org/assets/img/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
     <script src="https://unpkg.com/@tensorflow/tfjs@0.10.3"></script>
-    <!-- Load the MobileNet model. -->
     <script src="https://unpkg.com/@tensorflow-models/mobilenet@0.0.1"></script>
-
-    <script src="main.js"></script>
+    <!-- Load the MobileNet model. -->
+    <script type="module" src="build/main.completed.js"></script>
+    <!--<script src="build/main.js"></script>-->
   </head>
 
-  <body onload="setup()">
+  <body>
     <div style="text-align:center">
       <h1>What's That Image</h1>
       <video id="video">Video stream not available.</video>

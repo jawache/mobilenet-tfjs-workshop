@@ -1,2 +1,5 @@
 .idea
 _OLD_
+
+# Dependency directories
+node_modules/

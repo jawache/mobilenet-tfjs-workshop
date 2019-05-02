@@ -1,0 +1,23 @@
+{
+  "name": "mobilenet-tfjs-workshop",
+  "version": "1.1.0",
+  "description": "Learn to build an image classifier with JavaScript and Tensorflow.js!",
+  "main": "main.js",
+  "repository": "https://github.com/Sriharish/mobilenet-tfjs-workshop.git",
+  "author": "Asim Hussain<asim@codecraft.tv>",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently \"browser-sync start --server -w\" \" tsc --watch\""
+  },
+  "dependencies": {
+    "@tensorflow-models/mobilenet": "^1.0.1",
+    "@tensorflow/tfjs": "^1.1.0",
+    "p5": "^0.8.0"
+  },
+  "devDependencies": {
+    "@types/p5": "^0.7.2",
+    "browser-sync": "^2.26.5",
+    "concurrently": "^4.1.0",
+    "typescript": "^3.4.5"
+  }
+}
